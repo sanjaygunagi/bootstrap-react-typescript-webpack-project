@@ -1,6 +1,6 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
@@ -23,25 +23,12 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
-            options: {
-              esModule: false,
-            },
           },
           {
             loader: '@teamsupercell/typings-for-css-modules-loader',
-            // options: {
-            //   namedExport: true,
-            // },
           },
           {
             loader: 'css-loader',
-            options: {
-              // options for the v5 of css-loader
-              modules: {
-                exportLocalsConvention: 'camelCaseOnly',
-                localIdentName: '[local]',
-              },
-            },
           },
           'sass-loader',
         ],
@@ -69,4 +56,4 @@ module.exports = {
       patterns: [{ from: 'source', to: 'dest', noErrorOnMissing: true }],
     }),
   ],
-}
+};
