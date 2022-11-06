@@ -4,16 +4,15 @@ import svgImage from './react-native-1.svg'
 import { Counter } from './Counter'
 
 export const App = () => {
-  const n = 0
-  const hh = 'Hello'
+  const hello = 'Hello'
   return (
     <div>
       <h1>
-        Hello App React Typescript Webpack {process.env.NODE_ENV}{' '}
+        {hello} App React Typescript Webpack {process.env.NODE_ENV}{' '}
         {process.env.name}
       </h1>
-      <img src={image} alt="Image" width={200} height={200} />
-      <img src={svgImage} alt="SVG Image" width={200} height={200} />
+      <img src={image} alt="react" width={200} height={200} />
+      <img src={svgImage} alt="react SVG" width={200} height={200} />
       <Counter />
     </div>
   )
