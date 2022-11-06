@@ -1,3 +1,10 @@
-h1 {
-  color: lime;
+.container {
+  background-color: yellow;
+  &--title {
+    color: orange;
+  }
+
+  &__small {
+    font-size: 5rem;
+  }
 }

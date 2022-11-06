@@ -1,13 +1,16 @@
-import './styles.scss'
+import styles from './styles.scss'
 import image from './react.png'
 import svgImage from './react-native-1.svg'
 import { Counter } from './Counter'
+import cx from 'classnames'
+
+import stylesapp from './stylesapp.scss'
 
 export const App = () => {
   const hello = 'Hello'
   return (
-    <div>
-      <h1>
+    <div className={stylesapp.container}>
+      <h1 className={cx(styles.containerTitle, styles.containerSmall)}>
         {hello} App React Typescript Webpack {process.env.NODE_ENV}{' '}
         {process.env.name}
       </h1>

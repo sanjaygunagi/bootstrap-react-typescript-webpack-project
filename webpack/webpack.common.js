@@ -19,8 +19,32 @@ module.exports = {
         ],
       },
       {
-        test: /\.(s(a|c)ss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              esModule: false,
+            },
+          },
+          {
+            loader: '@teamsupercell/typings-for-css-modules-loader',
+            // options: {
+            //   namedExport: true,
+            // },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              // options for the v5 of css-loader
+              modules: {
+                exportLocalsConvention: 'camelCaseOnly',
+                localIdentName: '[local]',
+              },
+            },
+          },
+          'sass-loader',
+        ],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
@@ -42,7 +66,7 @@ module.exports = {
       template: path.resolve(__dirname, '..', './src/index.html'),
     }),
     new CopyPlugin({
-      patterns: [{ from: 'source', to: 'dest' }],
+      patterns: [{ from: 'source', to: 'dest', noErrorOnMissing: true }],
     }),
   ],
 }
