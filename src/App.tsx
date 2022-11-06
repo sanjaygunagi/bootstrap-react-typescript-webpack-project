@@ -1,8 +1,8 @@
-import styles from './styles.scss';
-import image from './react.png';
-import svgImage from './react-native-1.svg';
-import { Counter } from './Counter';
 import cx from 'classnames';
+import { Counter } from './Counter';
+import svgImage from './react-native-1.svg';
+import image from './react.png';
+import styles from './styles.scss';
 
 import stylesapp from './stylesapp.scss';
 
