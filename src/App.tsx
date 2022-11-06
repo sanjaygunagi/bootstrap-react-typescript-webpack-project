@@ -4,6 +4,7 @@ import svgImage from "./react-native-1.svg";
 import { Counter } from "./Counter";
 
 export const App = () => {
+  const n = 0;
   return (
     <div>
       <h1>
